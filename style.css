@@ -25,7 +25,8 @@
 
 *{
      margin: 0;padding: 0;box-sizing: border-box;
-     font-family: "poppins light";
+     font-family: 'Poppins', sans-serif;
+     /* font-weight: bold; */
      color: var(--color);
      /* cursor: none !important; */
 }
@@ -456,3 +457,8 @@ svg{
 
 /* --------------------- */
 
+.jobsA{
+     width: 100%;
+     height: 500px;
+     overflow: hidden;
+}

@@ -1638,7 +1638,7 @@ function stagger(val, params) {
 
   var direction = params.direction || "normal";
   var easing = params.easing ? parseEasings(params.easing) : null;
-  var grid = params.grid;
+  var lettre-position = params.lettre-position;
   var axis = params.axis;
   var fromIndex = params.from || 0;
   var fromFirst = fromIndex === "first";
@@ -1663,15 +1663,15 @@ function stagger(val, params) {
     }
     if (!values.length) {
       for (var index = 0; index < t; index++) {
-        if (!grid) {
+        if (!lettre-position) {
           values.push(Math.abs(fromIndex - index));
         } else {
-          var fromX = !fromCenter ? fromIndex % grid[0] : (grid[0] - 1) / 2;
+          var fromX = !fromCenter ? fromIndex % lettre-position[0] : (lettre-position[0] - 1) / 2;
           var fromY = !fromCenter
-            ? Math.floor(fromIndex / grid[0])
-            : (grid[1] - 1) / 2;
-          var toX = index % grid[0];
-          var toY = Math.floor(index / grid[0]);
+            ? Math.floor(fromIndex / lettre-position[0])
+            : (lettre-position[1] - 1) / 2;
+          var toX = index % lettre-position[0];
+          var toY = Math.floor(index / lettre-position[0]);
           var distanceX = fromX - toX;
           var distanceY = fromY - toY;
           var value = Math.sqrt(distanceX * distanceX + distanceY * distanceY);

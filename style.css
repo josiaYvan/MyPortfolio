@@ -177,7 +177,8 @@ body{
 
 
 /* navigation */
-.navbar{
+.navbar{ 
+     z-index: 1000;
      border-right: 1px solid black ;
      box-shadow: 0 0 5px black;
      position: fixed;
@@ -324,7 +325,7 @@ box-shadow: inset 20px 20px 27px #1c1c1c,
    }
    /* -----nom--------------------------- */
 
-.grid {
+.lettre-position {
 
 z-index: -1;
 text-align: center;
@@ -334,7 +335,7 @@ font-weight: bolder;
 display: inline-block;
      margin: 0 0.1em;
 }
-.grid span {
+.lettre-position span {
 position: relative;
 font-size: 12rem;
 perspective: 550px;
@@ -411,26 +412,10 @@ transform: scaleX(0.85) skewY(20deg);
 
 /* --------CONTAINER----------- */
 /* -------------ABOUT ME---------- */
-#aboutMe .paragraph{
-     padding: 2em;
-     text-align: center;
-}
-#aboutMe p{
-     font-weight: lighter;
-     margin-bottom: 2em;
-}
-
-#aboutMe .right{
-     width: 35%;
-}
 svg{
      margin: -6em 0;
 }
 /* ---support----------- */
-.support{
-     width: 100%;
-     overflow: hidden;
-}
 /* -------Skills------------ */
 .relative{
      position: relative;

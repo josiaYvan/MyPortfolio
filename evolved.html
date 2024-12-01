@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Vertical avec Thème</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Script pour basculer entre les thèmes
+        function toggleTheme() {
+            const htmlElement = document.documentElement;
+            htmlElement.classList.toggle('dark');
+            localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
+        }
+
+        // Appliquer le thème sauvegardé
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+            }
+        });
+    </script>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 min-h-screen flex">
+    <!-- Menu de navigation -->
+    <aside class="w-64 bg-gray-200 dark:bg-gray-800 p-4">
+        <h1 class="text-xl font-bold mb-4">Navigation</h1>
+        <ul class="space-y-2">
+            <li><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Accueil</a></li>
+            <li><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Thèmes</a></li>
+            <li><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Paramètres</a></li>
+            <li><a href="#" class="block py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700">Aide</a></li>
+        </ul>
+        <!-- Bouton de bascule de thème -->
+        <button
+            class="mt-4 w-full py-2 px-4 bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-gray-200 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-600"
+            onclick="toggleTheme()"
+        >
+            Basculer Thème
+        </button>
+    </aside>
+
+    <!-- Contenu principal -->
+    <main class="flex-1 p-6">
+        <h2 class="text-2xl font-bold mb-4">Bienvenue</h2>
+        <p>Ceci est une page avec un menu de navigation vertical et un bouton pour basculer entre les thèmes clair et sombre.</p>
+    </main>
+</body>
+</html>
